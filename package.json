@@ -9,6 +9,7 @@
   },
   "scripts": {
     "start": "node index.js",
-    "start-dev": "nodemon index.js"
+    "start-dev": "nodemon server.js",
+    "run-client": "nodemon client.js"
   }
 }

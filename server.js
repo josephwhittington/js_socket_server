@@ -1,6 +1,6 @@
 const WebSocket = require("ws");
 
-const WsServer = new WebSocket.Server({
+const ws = new WebSocket.Server({
     port: 8080,
     perMessageDeflate: 
     {
@@ -13,4 +13,12 @@ const WsServer = new WebSocket.Server({
     },
     concurrencyLimit: 10,
     threshold: 1024
+});
+
+ws.on("connection", (conn)=>{
+    console.log("Connected");
+    
+    conn.on("message", (data)=>{
+        console.log(data);
+    })
 });
